@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:textSize="@dimen/_10ssp"
+        android:layout_gravity="start"
+        android:text="Location"
+        android:layout_marginTop="@dimen/_20ssp"
+        android:layout_marginLeft="@dimen/_20ssp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </TextView>
+    <TextView
+        android:layout_gravity="start"
+        android:text="Dhaka,Ashuliasaver,"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_5ssp"
+        android:layout_marginLeft="@dimen/_20ssp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </TextView>
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        
+        <androidx.appcompat.widget.SearchView
+            app:queryHint="serch here...."
+            android:background="@drawable/search"
+            android:layout_width="@dimen/_240sdp"
+            android:layout_height="wrap_content">
+
+        </androidx.appcompat.widget.SearchView>
+        <ImageView
+            android:src="@drawable/baseline_menu_24"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/transparent"
+            android:layout_height="@dimen/_30sdp">
+
+        </ImageView>
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+
+</RelativeLayout>

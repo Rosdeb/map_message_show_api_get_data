@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:orientation="vertical"
+    android:padding="@dimen/_5sdp"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="673dp"
+        android:gravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:src="@drawable/baseline_local_grocery_store_24" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:src="@drawable/baseline_chat_24" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Buy Now"
+                app:cornerRadius="@dimen/_5sdp">
+
+            </com.google.android.material.button.MaterialButton>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:text="Add to Cart"
+                app:cornerRadius="@dimen/_5sdp">
+
+            </com.google.android.material.button.MaterialButton>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="560dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp">
+
+                        <ImageView
+                            android:id="@+id/back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:clickable="true"
+                            android:src="@drawable/baseline_arrow_back_ios_new_24">
+
+                        </ImageView>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_100sdp"
+                            android:text="Details"
+                            android:textSize="@dimen/_17sdp"
+                            android:textStyle="bold">
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <ImageView
+                            android:id="@+id/iamges"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_156sdp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/image">
+
+
+                        </ImageView>
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:text="$"
+                            android:textColor="@color/BRIGHT"
+                            android:textSize="@dimen/_15sdp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:textColor="@color/BRIGHT"
+                            android:textSize="@dimen/_15sdp">
+
+                        </TextView>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:text="Dr.Biswas Good Health"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <RatingBar
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:numStars="1">
+
+                        </RatingBar>
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="(17) | 1.4k sold ">
+
+                        </TextView>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_150sdp"
+                            android:src="@drawable/baseline_heart_broken_24" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:src="@drawable/baseline_chat_24" />
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:backgroundTint="@color/white_1"
+                        android:elevation="@dimen/_12sdp"
+                        android:padding="@dimen/_5sdp"
+                        app:cardCornerRadius="@dimen/_12sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="7 Days Returns"
+                                android:textColor="@color/blue"
+                                android:textStyle="bold">
+
+                            </TextView>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Guaranted by 31 Dec-5 Jan"
+                                    android:textColor="@color/color_primary">
+
+                                </TextView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/_120sdp"
+                                    android:text="$150 TK"
+                                    android:textColor="@color/color_primary"
+                                    android:textStyle="bold">
+
+                                </TextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Standard Delivery"
+                                    android:textColor="@color/BRIGHT"
+                                    android:textSize="@dimen/_8sdp">
+
+                                </TextView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/_181sdp"
+                                    android:text="To Jhinaigati"
+                                    android:textColor="@color/gray"
+                                    android:textSize="@dimen/_8sdp">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="wrap_content"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textColor="@color/blue"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+
+                </LinearLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
