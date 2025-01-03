@@ -16,6 +16,7 @@
     <color name="selected_stroke">#FF0000</color>
     <color name="default_background">#FFFFFF</color>
     <color name="default_stroke">#CCCCCC</color>
+    <color name="shimmer_color">#CCCCCC</color>
 
     <color name="green">#45bd63</color>
     <color name="system">#B5CAD7</color>

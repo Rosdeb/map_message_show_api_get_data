@@ -40,7 +40,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
 
         Models_1 models1 = itemlist.get(position);
-        holder.price.setText(""+models1.getPrice());
+        holder.price.setText("$"+models1.getPrice());
         holder.textView.setText(models1.getTitle());
         Glide.with(context)
                 .load(models1.getImage())

@@ -25,6 +25,7 @@ import com.example.coffee.Adapter.Adapter_category;
 import com.example.coffee.Models.Category;
 import com.example.coffee.Models.Models_1;
 import com.example.coffee.R;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,6 +39,7 @@ public class Home extends Fragment {
      RecyclerView recyclerView,recyclerView_category;
      List<Models_1> itemlist;
      List<Category> category;
+     ShimmerFrameLayout shimmerFrameLayout;
      Adapter adapter;
     Adapter_category adapterCategory;
     private boolean isLoading = false;
@@ -56,6 +58,8 @@ public class Home extends Fragment {
         View view= inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerView=view.findViewById(R.id.recyclerView);
+        shimmerFrameLayout = view.findViewById(R.id.shimmer);
+        shimmerFrameLayout.startShimmer();
         recyclerView_category=view.findViewById(R.id.recyclerViewCategories);
         category=new ArrayList<>();
         recyclerView_category.setHasFixedSize(false);
@@ -103,6 +107,9 @@ public class Home extends Fragment {
             @Override
             public void onResponse(JSONArray response) {
                 try{
+                    shimmerFrameLayout.stopShimmer();
+                    shimmerFrameLayout.setVisibility(View.GONE);
+                    recyclerView.setVisibility(View.VISIBLE);
                     List<Category> category = new ArrayList<>();
                     for (int i =0;i<response.length();i++){
                         JSONObject jsonObject = response.getJSONObject(i);
@@ -160,6 +167,7 @@ public class Home extends Fragment {
                        models1s.add(new Models_1(title, image, price,id,description));
 
                    }
+
                    adapter.addProducts(models1s);
                    currentPage++;
                    adapter.notifyDataSetChanged();
@@ -183,6 +191,7 @@ public class Home extends Fragment {
     requestQueue.add(jsonArrayRequest);
     }
     public void setupPagination(){
+
 
         recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override

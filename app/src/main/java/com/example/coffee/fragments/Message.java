@@ -93,20 +93,14 @@ public class Message extends Fragment {
                      recyclerView.scrollToPosition(messageLists.size() - 1);
                      editText.setText("");
 
-
                 }
 
             }
 
         });
-
-
-
-
-
+        
         return view;
     }
-
     private void opengallery() {
 
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){

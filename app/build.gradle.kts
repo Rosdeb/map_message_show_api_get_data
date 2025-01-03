@@ -47,6 +47,7 @@ dependencies {
     implementation ("com.android.volley:volley:1.2.1")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("com.facebook.shimmer:shimmer:0.5.0")
     implementation ("com.intuit.sdp:sdp-android:1.1.1")
     implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     implementation ("com.google.android.gms:play-services-maps:19.0.0")
