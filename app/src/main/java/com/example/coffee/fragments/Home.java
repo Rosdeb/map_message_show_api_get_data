@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +40,7 @@ public class Home extends Fragment {
      RecyclerView recyclerView,recyclerView_category;
      List<Models_1> itemlist;
      List<Category> category;
-     ShimmerFrameLayout shimmerFrameLayout;
+     ShimmerFrameLayout shimmerFrameLayout,categoryshiimar;
      Adapter adapter;
     Adapter_category adapterCategory;
     private boolean isLoading = false;
@@ -59,6 +60,7 @@ public class Home extends Fragment {
 
         recyclerView=view.findViewById(R.id.recyclerView);
         shimmerFrameLayout = view.findViewById(R.id.shimmer);
+        categoryshiimar = view.findViewById(R.id.categoryShimmar);
         shimmerFrameLayout.startShimmer();
         recyclerView_category=view.findViewById(R.id.recyclerViewCategories);
         category=new ArrayList<>();
@@ -79,13 +81,21 @@ public class Home extends Fragment {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                itemlist.clear();
-                setupPagination();
-                fatechDATA();
-                adapter.notifyDataSetChanged();// Load new data here
-                swipeRefreshLayout.setRefreshing(false);
-                isLoading=false;
-
+                shimmerFrameLayout.startShimmer();
+                shimmerFrameLayout.setVisibility(View.VISIBLE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        shimmerFrameLayout.stopShimmer();
+                        shimmerFrameLayout.setVisibility(View.GONE);
+                        itemlist.clear();
+                        setupPagination();
+                        fatechDATA();
+                        adapter.notifyDataSetChanged();// Load new data here
+                        swipeRefreshLayout.setRefreshing(false);
+                        isLoading = false;
+                    }
+                },2000);
             }
         });
 
@@ -107,9 +117,9 @@ public class Home extends Fragment {
             @Override
             public void onResponse(JSONArray response) {
                 try{
-                    shimmerFrameLayout.stopShimmer();
-                    shimmerFrameLayout.setVisibility(View.GONE);
-                    recyclerView.setVisibility(View.VISIBLE);
+                    categoryshiimar.stopShimmer();
+                    categoryshiimar.setVisibility(View.GONE);
+                    recyclerView_category.setVisibility(View.VISIBLE);
                     List<Category> category = new ArrayList<>();
                     for (int i =0;i<response.length();i++){
                         JSONObject jsonObject = response.getJSONObject(i);
@@ -155,6 +165,9 @@ public class Home extends Fragment {
         public void onResponse(JSONArray response) {
 
             try {
+                shimmerFrameLayout.stopShimmer();
+                shimmerFrameLayout.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
                    List<Models_1> models1s = new ArrayList<>();
                    for (int i=0;i<response.length();i++){
                        JSONObject jsonObject= response.getJSONObject(i);
